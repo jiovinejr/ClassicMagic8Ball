@@ -80,7 +80,7 @@ public class Magic8Ball {
             System.out.print("Would you like to ask again?? (y / n): ");
             keepAsking = scanner.nextLine();
         }
-            if (keepAsking.equals("y")){
+            if (keepAsking.equals("n")){
                 System.out.println("");
                 System.out.println("");
                 System.out.println("*****************************************");
