@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,53 +20,74 @@ public class Magic8Ball {
         System.out.println("***********  MAGIC 8 BALL  **************");
         System.out.println("************              ***************");
         System.out.println("**************          *****************");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("Ask a question below to peer through the Mist: ");
-        String userQuestion = scanner.nextLine();
-        System.out.println("");
-        System.out.println("*****************************************");
-        System.out.println("*****************************************");
-        System.out.println("");
-        System.out.println("");
-        String[]responses = new String[]{"It is certain.",
-                "It is decidedly so.",
-                "Without a doubt.",
-                "Yes definitely.",
-                "You may rely on it.",
-                "As I see it, yes.",
-                "Most likely.",
-                "Outlook good.",
-                "Yes.",
-                "Signs point to yes.",
-                "Reply hazy, try again.",
-                "Ask again later.",
-                "Better not tell you now.",
-                "Cannot predict now.",
-                "Concentrate and ask again.",
-                "Don't count on it.",
-                "My reply is no.",
-                "My sources say no.",
-                "Outlook not so good.",
-                "Very doubtful."};
-        int randomNumber = new Random().nextInt(20);
-        for (int i = 0; i < responses.length; i++) {
-            if (randomNumber == i) {
-                System.out.println(responses[i]);
-            }
-        }
-                System.out.println("");
-                System.out.println("");
-
-                System.out.println("*****************************************");
-                if (randomNumber < 10) {
-                    System.out.println("*         !! GOOD FORTUNE !!            *");
-                } else if (randomNumber > 14) {
-                    System.out.println("*           xx BAD LUCK XX              *");
-                } else {
-                    System.out.println("*       ?? FUTURE UNCERTAIN ??          *");
+        String keepAsking = "y";
+        while (!keepAsking.equals("n")) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("Ask a question below to peer through the Mist: ");
+            String userQuestion = scanner.nextLine();
+            System.out.println("");
+            System.out.println("*****************************************");
+            System.out.println("*****************************************");
+            System.out.println("");
+            System.out.println("");
+            String[] responses = new String[]{"It is certain.",
+                    "It is decidedly so.",
+                    "Without a doubt.",
+                    "Yes definitely.",
+                    "You may rely on it.",
+                    "As I see it, yes.",
+                    "Most likely.",
+                    "Outlook good.",
+                    "Yes.",
+                    "Signs point to yes.",
+                    "Reply hazy, try again.",
+                    "Ask again later.",
+                    "Better not tell you now.",
+                    "Cannot predict now.",
+                    "Concentrate and ask again.",
+                    "Don't count on it.",
+                    "My reply is no.",
+                    "My sources say no.",
+                    "Outlook not so good.",
+                    "Very doubtful."};
+            int randomNumber = new Random().nextInt(20);
+            for (int i = 0; i < responses.length; i++) {
+                if (randomNumber == i) {
+                    System.out.println("*****************************************");
+                    System.out.println();
+                    System.out.println("           " + responses[i]);
+                    System.out.println();
+                    System.out.println("*****************************************");
                 }
+            }
+            System.out.println("");
+            System.out.println("");
+
+
+            if (randomNumber < 10) {
+                System.out.println("*         !! GOOD FORTUNE !!            *");
+            } else if (randomNumber > 14) {
+                System.out.println("*           xx BAD LUCK XX              *");
+            } else {
+                System.out.println("*       ?? FUTURE UNCERTAIN ??          *");
+            }
+
+
+            System.out.println("");
+            System.out.println("");
+
+            System.out.print("Would you like to ask again?? (y / n): ");
+            keepAsking = scanner.nextLine();
+        }
+            if (keepAsking.equals("y")){
+                System.out.println("");
+                System.out.println("");
                 System.out.println("*****************************************");
+                System.out.println("          ...Until next time...          ");
+                System.out.println("*****************************************");
+            }
+
 
 
 
